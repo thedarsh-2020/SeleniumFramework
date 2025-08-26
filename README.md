@@ -1,4 +1,4 @@
-# Selenium Framework
+# Web Selenium Framework
 # Tech Stach:
 - Java
 - Maven
