@@ -1,0 +1,28 @@
+package tests;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import pages.ProductDetailsPage;
+import pages.SearchPage;
+
+public class SearchProductUsingAutoSuggest extends TestBase {
+	
+	String productName = "Apple MacBook Pro";
+	SearchPage searchObject;
+	ProductDetailsPage detailsObject;
+	
+	@Test
+	public void UserCanSearchWithAutoSuggest()
+	{
+		try {
+			searchObject = new SearchPage(driver);
+			searchObject.ProductSearchUsingAutoSuggest("Mac");
+			detailsObject = new ProductDetailsPage(driver);
+			Assert.assertEquals(detailsObject.productNamebreadCrumb.getText(), productName);
+		} catch (Exception e) {
+			System.out.println("Error Occured: " + e.getMessage());
+		}
+	}
+
+}
