@@ -58,6 +58,16 @@ public class TestBase extends AbstractTestNGCucumberTests
 		{
 			driver = new ChromeDriver(chromeOption());
 		}
+		
+		// Headelss Browser Test
+		else if (browserName.equalsIgnoreCase("chrome-headless"))
+		{
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--headless");
+			options.addArguments("--window-size=1920,1080");
+			driver = new ChromeDriver(options);
+		}
+		
 		else if (browserName.equalsIgnoreCase("firefox"))
 		{
 			driver = new FirefoxDriver(firefoxOption());
