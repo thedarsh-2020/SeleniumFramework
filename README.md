@@ -6,4 +6,4 @@
 - DDT
 - BDD
 - Cucumber
-- - Allure Reports
+- Allure Reports
